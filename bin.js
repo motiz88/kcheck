@@ -29,9 +29,9 @@ function next() {
   var cmd = cmds.shift();
   var proc = child.spawn(cmd.name, cmd.args, { stdio: "inherit" });
 
-  proc.on("error", function (err) {
+  proc.on("error", function (_err) {
     err = true;
-    console.error(err.stack);
+    console.error(_err.stack || _err.message || _err);
   });
 
   proc.on("close", function (code) {
