@@ -5,9 +5,12 @@ var chalk = require("chalk");
 var path  = require("path");
 var fs    = require("fs");
 
+var eslintPkgLoc = require.resolve("eslint/package.json");
+var eslintPkg = require(eslintPkgLoc);
+
 var cmds = [
   {
-    name: path.join(__dirname, "node_modules", ".bin", "eslint"),
+    name: path.resolve(path.join(eslintPkgLoc, "..", eslintPkg.bin.eslint || eslintPkg.bin)),
     args: ["--config", "eslint-config-kittens", "."]
   }
 ];
