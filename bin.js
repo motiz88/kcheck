@@ -11,15 +11,13 @@ var eslintPkg = require(eslintPkgLoc);
 var cmds = [
   {
     name: path.resolve(path.join(eslintPkgLoc, "..", eslintPkg.bin.eslint || eslintPkg.bin)),
-    cwd: __dirname,
-    args: ["--config", "eslint-config-kittens", process.cwd()]
+    args: ["--config", "eslint-config-kittens", "."]
   }
 ];
 
 if (fs.existsSync(".flowconfig")) {
   cmds.push({
     name: require("flow-bin"),
-    cwd: process.cwd(),
     args: ["check"]
   });
 }
@@ -32,7 +30,7 @@ function next() {
   if (!cmds.length) return;
 
   var cmd = cmds.shift();
-  var proc = child.spawn(cmd.name, cmd.args, { stdio: "inherit", cwd: cmd.cwd });
+  var proc = child.spawn(cmd.name, cmd.args, { stdio: "inherit" });
 
   proc.on("error", function (_err) {
     err = true;
