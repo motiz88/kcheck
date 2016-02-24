@@ -1,6 +1,6 @@
 {
   "name": "kcheck",
-  "version": "1.0.7",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "repository": {
@@ -18,7 +18,7 @@
     "babel-eslint": "^4.1.8",
     "chalk": "^1.1.1",
     "eslint": "^2.0.0",
-    "flow-bin": "^0.21.0",
+    "flow-bin": "^0.22.0",
 
     "eslint-config-kittens": "^1.0.3",
     "babel-eslint": "^4.1.8",
