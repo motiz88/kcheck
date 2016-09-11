@@ -10,8 +10,8 @@ var eslintPkg = require(eslintPkgLoc);
 
 var cmds = [
   {
-    name: path.resolve(path.join(eslintPkgLoc, "..", eslintPkg.bin.eslint || eslintPkg.bin)),
-    args: ["--config", "eslint-config-kittens", "."]
+    name: "node",
+    args: [path.resolve(path.join(eslintPkgLoc, "..", eslintPkg.bin.eslint || eslintPkg.bin)), "--config", "eslint-config-kittens", "."]
   }
 ];
 
